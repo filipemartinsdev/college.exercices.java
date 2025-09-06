@@ -1,33 +1,41 @@
+import java.util.List;
+
 public class Quiz {
     private static int pontos = 0;
 
     public static void iniciar(){
 
-        System.out.println("\n+---------------------------+");
-        System.out.println("|         JAVA QUIZ         |");
-        System.out.println("+---------------------------+\n");
+        System.out.println();
+        System.out.println("+-------------------------------------+");
+        System.out.println("|              JAVA QUIZ              |");
+        System.out.println("+-------------------------------------+");
+        System.out.println("+  15 Questões  |");
+        System.out.println("+---------------+");
+        System.out.println();
 
-        Questao q1 = new Questao();
-        q1.pergunta = "[1] Qual é o paradigma da linguagem Java?";
-        q1.opcaoA = "Funcional";
-        q1.opcaoB = "Orientado a Objetos";
-        q1.opcaoC = "Orientado a Eventos";
-        q1.opcaoD = "Procedural";
-        q1.opcaoE = "Lógico";
-        q1.correta = "B";
+
+        Questao q1 = new Questao(
+                1, "Qual é o paradigma da linugagem Java?",
+                new String[]{
+                        "Funcional", "Orientado a Objetos", "Orientado a Eventos", "Procedural", "Lógico"
+                },
+                "B"
+        );
         q1.escrevaQuestao();
         if(q1.isCorreta(q1.leiaResposta())) pontos++;
 
-        Questao q2 = new Questao();
-        q2.pergunta = "[2] Qual o nome do Framework da biblioteca padrão Java que possui estruturas de dados?";
-        q2.opcaoA = "Spring Boot";
-        q2.opcaoB = "Java Collections";
-        q2.opcaoC = "JavaFX";
-        q2.opcaoD = "Java Swing";
-        q2.opcaoE = "React Native";
-        q2.correta = "B";
+        System.out.println("---------------------------------------\n");
+
+        Questao q2 = new Questao(
+                2, "Qual o nome do Framework da biblioteca padrão Java que possui estruturas de dados?",
+                new String[]{"Spring Boot", "Java Collections", "JavaFX", "Java Swing", "React Native"},
+                "B"
+
+        );
         q2.escrevaQuestao();
         if(q2.isCorreta(q2.leiaResposta())) pontos++;
+
+        System.out.println("---------------------------------------\n");
 
         Questao q3 = new Questao();
         q3.pergunta = "[3] Como se chama o método usado para inicializar objetos?";
@@ -40,6 +48,8 @@ public class Quiz {
         q3.escrevaQuestao();
         if(q3.isCorreta(q3.leiaResposta())) pontos++;
 
+        System.out.println("---------------------------------------\n");
+
         Questao q4 = new Questao();
         q4.pergunta = "[4] Qual tipo de Classe no java usamos para armazenar valores imutáveis?";
         q4.opcaoA = "Interface";
@@ -50,6 +60,8 @@ public class Quiz {
         q4.correta = "C";
         q4.escrevaQuestao();
         if(q4.isCorreta(q4.leiaResposta())) pontos++;
+
+        System.out.println("---------------------------------------\n");
 
         Questao q5 = new Questao();
         q5.pergunta = "[5] Qual pacote do java armazena o Collection Framework";
@@ -62,6 +74,8 @@ public class Quiz {
         q5.escrevaQuestao();
         if(q5.isCorreta(q5.leiaResposta())) pontos++;
 
+        System.out.println("---------------------------------------\n");
+
         Questao q6 = new Questao();
         q6.pergunta = "[6] Qual trecho de codigo a seguir não será compilado pelo javac?";
         q6.opcaoA = "System.out.println(\"hello\");";
@@ -72,6 +86,8 @@ public class Quiz {
         q6.correta = "C";
         q6.escrevaQuestao();
         if(q6.isCorreta(q6.leiaResposta())) pontos++;
+
+        System.out.println("---------------------------------------\n");
 
         Questao q7 = new Questao();
         q7.pergunta = "[7] Qual palavra reservada define um campo como visivel somente no escopo do Package atual?";
@@ -84,6 +100,8 @@ public class Quiz {
         q7.escrevaQuestao();
         if(q7.isCorreta(q7.leiaResposta())) pontos++;
 
+        System.out.println("---------------------------------------\n");
+
         Questao q8 = new Questao();
         q8.pergunta = "[8] Qual alternativa representa um nome ilegal de variavel?";
         q8.opcaoA = "var";
@@ -95,6 +113,8 @@ public class Quiz {
         q8.escrevaQuestao();
         if(q8.isCorreta(q8.leiaResposta())) pontos++;
 
+        System.out.println("---------------------------------------\n");
+
         Questao q9 = new Questao();
         q9.pergunta = "[9] Qual API padrão java é usada para lidar dinamicamente com fluxo de dados?";
         q9.opcaoA = "Stream API";
@@ -105,6 +125,8 @@ public class Quiz {
         q9.correta = "A";
         q9.escrevaQuestao();
         if(q9.isCorreta(q9.leiaResposta())) pontos++;
+
+        System.out.println("---------------------------------------\n");
 
         Questao q10 = new Questao();
         q10.pergunta = "[10] Qual Design Pattern é muito utilizado em java para gerenciar conexões com banco de dados?";
